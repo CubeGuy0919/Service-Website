@@ -1,0 +1,80 @@
+:root {
+    --hatter: #121417;
+    --kartya: #1e2126;
+    --sor-paros: #25282e;
+    --kek: #3498db;
+    --zold: #2ecc71;
+    --szoveg-halvany: #a0a0a0;
+}
+
+body {
+    background-color: var(--hatter);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+/* Navigáció */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 5%;
+    background: #1a1c21;
+    border-bottom: 1px solid #333;
+}
+
+.logo span { color: var(--kek); font-weight: bold; }
+
+/* Kompatibilitási sáv az image_48d9dc.png stílusában */
+.compatibility-alert {
+    background: var(--zold);
+    padding: 12px;
+    border-radius: 4px;
+    margin: 20px 0;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Táblázat */
+.table-container {
+    background: var(--kartya);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #2a2e35;
+    color: var(--szoveg-halvany);
+    text-align: left;
+    padding: 15px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #333;
+}
+
+tr:nth-child(even) { background: var(--sor-paros); }
+
+.kat-link { color: var(--kek); font-weight: bold; text-decoration: none; }
+.termek-nev { color: white; font-weight: 600; text-decoration: none; display: block; }
+.termek-nev:hover { text-decoration: underline; }
+.reszletek { font-size: 0.8rem; color: var(--szoveg-halvany); }
+
+.buy-btn {
+    background: #2b7bb9;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
