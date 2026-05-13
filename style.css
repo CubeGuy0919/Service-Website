@@ -1,80 +1,71 @@
 :root {
-    --hatter: #121417;
-    --kartya: #1e2126;
-    --sor-paros: #25282e;
-    --kek: #3498db;
-    --zold: #2ecc71;
-    --szoveg-halvany: #a0a0a0;
+    --bg: #121417;
+    --card: #1e2126;
+    --blue: #3498db;
+    --green: #2ecc71;
+    --text: #ffffff;
+    --text-dim: #a0a0a0;
 }
 
 body {
-    background-color: var(--hatter);
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
 }
 
-/* Navigáció */
 .navbar {
+    background: #1a1c21;
+    padding: 15px 50px;
     display: flex;
     justify-content: space-between;
-    padding: 15px 5%;
-    background: #1a1c21;
     border-bottom: 1px solid #333;
 }
 
-.logo span { color: var(--kek); font-weight: bold; }
+.logo span { color: var(--blue); font-weight: bold; }
 
-/* Kompatibilitási sáv az image_48d9dc.png stílusában */
-.compatibility-alert {
-    background: var(--zold);
+.container { max-width: 1100px; margin: 30px auto; padding: 20px; }
+
+.comp-bar {
+    background: var(--green);
     padding: 12px;
     border-radius: 4px;
-    margin: 20px 0;
+    margin-bottom: 20px;
     font-weight: bold;
-    font-size: 0.9rem;
 }
 
-/* Táblázat */
-.table-container {
-    background: var(--kartya);
-    border-radius: 8px;
-    overflow: hidden;
+.table-wrapper {
+    background: var(--card);
+    border-radius: 6px;
     border: 1px solid #333;
+    overflow: hidden;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
+table { width: 100%; border-collapse: collapse; }
 
 th {
     background: #2a2e35;
-    color: var(--szoveg-halvany);
+    color: var(--text-dim);
     text-align: left;
     padding: 15px;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
 }
 
-td {
-    padding: 15px;
-    border-bottom: 1px solid #333;
-}
+td { padding: 15px; border-bottom: 1px solid #333; }
 
-tr:nth-child(even) { background: var(--sor-paros); }
+tr:nth-child(even) { background: #25282e; }
 
-.kat-link { color: var(--kek); font-weight: bold; text-decoration: none; }
-.termek-nev { color: white; font-weight: 600; text-decoration: none; display: block; }
-.termek-nev:hover { text-decoration: underline; }
-.reszletek { font-size: 0.8rem; color: var(--szoveg-halvany); }
+.cat-link { color: var(--blue); font-weight: bold; text-decoration: none; }
+.prod-name { font-weight: bold; display: block; }
+.prod-details { color: var(--text-dim); font-size: 0.85rem; }
+.price { color: var(--green); font-weight: bold; }
 
-.buy-btn {
+.btn-add {
     background: #2b7bb9;
     color: white;
     border: none;
-    padding: 8px 15px;
-    border-radius: 4px;
+    padding: 7px 14px;
+    border-radius: 3px;
     cursor: pointer;
-    font-weight: bold;
 }
