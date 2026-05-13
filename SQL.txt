@@ -31,3 +31,6 @@ INSERT INTO termekek (kategoria, nev, leiras, ar, bolt) VALUES
 ('Monitor', 'Samsung Odyssey G9', '49" Curved, 240Hz', 450000, 'Ipon'),
 ('Billentyűzet', 'Keychron Q1 Pro', 'Mechanikus, Vezeték nélküli', 72000, 'PCX'),
 ('Egér', 'Logitech G Pro X Superlight 2', 'Vezeték nélküli, 60g', 58000, 'Alza');
+
+
+http://localhost/pc_szerviz/index.php
