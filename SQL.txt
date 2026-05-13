@@ -1,0 +1,33 @@
+CREATE DATABASE pc_szerviz;
+USE pc_szerviz;
+
+CREATE TABLE termekek (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    kategoria VARCHAR(50),
+    nev VARCHAR(100),
+    leiras TEXT,
+    ar INT,
+    bolt VARCHAR(50)
+);
+
+INSERT INTO termekek (kategoria, nev, leiras, ar, bolt) VALUES 
+('Processzor', 'AMD Ryzen 7 7800X3D', '8-Core, 4.2 GHz, 96MB L3 Cache', 165000, 'Alza'),
+('Processzor', 'Intel Core i9-14900K', '24-Core, 6.0 GHz Turbo', 235000, 'PCX'),
+('Hűtő', 'NZXT Kraken Elite 360', '360mm AIO, LCD kijelzővel', 105000, 'Ipon'),
+('Hűtő', 'Noctua NH-D15', 'Prémium léghűtés, Chromax Black', 42000, 'Alza'),
+('Alaplap', 'ASUS ROG STRIX Z790-F', 'DDR5, PCIe 5.0, Wi-Fi 7', 155000, 'PCX'),
+('Alaplap', 'MSI MAG B650 Tomahawk', 'AM5 foglalat, DDR5 támogatás', 82000, 'Ipon'),
+('Memória', 'G.Skill Trident Z5 RGB 32GB', 'DDR5-6000 CL30 (2x16GB)', 48000, 'Alza'),
+('Memória', 'Corsair Vengeance 64GB', 'DDR5-5200 (2x32GB)', 75000, 'Ipon'),
+('Tárhely', 'Samsung 990 Pro 2TB', 'NVMe Gen4, 7450 MB/s', 68000, 'Alza'),
+('Tárhely', 'Kingston FURY Renegade 1TB', 'NVMe Gen4, 7300 MB/s', 35000, 'PCX'),
+('Videókártya', 'NVIDIA RTX 4080 Super', '16GB GDDR6X, Ray Tracing', 415000, 'Alza'),
+('Videókártya', 'ASUS TUF RX 7900 XTX', '24GB GDDR6, FSR 3.0', 385000, 'Ipon'),
+('Gépház', 'Lian Li PC-O11 Dynamic', 'Edzett üveg, Dual-Chamber', 62000, 'PCX'),
+('Gépház', 'Fractal Design North', 'Diófa előlap, Mid-Tower', 55000, 'Alza'),
+('Tápegység', 'Corsair RM850x', '850W 80+ Gold, Moduláris', 48000, 'Ipon'),
+('Tápegység', 'Seasonic Focus 1000W', '1000W 80+ Gold', 65000, 'PCX'),
+('Monitor', 'LG UltraGear 27GP850', '27" 1440p 165Hz IPS', 125000, 'Alza'),
+('Monitor', 'Samsung Odyssey G9', '49" Curved, 240Hz', 450000, 'Ipon'),
+('Billentyűzet', 'Keychron Q1 Pro', 'Mechanikus, Vezeték nélküli', 72000, 'PCX'),
+('Egér', 'Logitech G Pro X Superlight 2', 'Vezeték nélküli, 60g', 58000, 'Alza');
