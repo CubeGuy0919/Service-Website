@@ -1,140 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechForge | Premium PC Marketplace</title>
+<?php
+include 'header.php';
+?>
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-    <!-- Swiper -->
-    <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<!-- TOP MINI BAR -->
-<div class="topbar">
-    <div class="container d-flex justify-content-between">
-        <div>
-            <small>Premium Gaming Hardware Store</small>
-        </div>
-
-        <div class="d-flex gap-3">
-            <a href="#">Login</a>
-            <a href="#">Register</a>
-            <a href="#">Support</a>
-        </div>
-    </div>
-</div>
-
-<!-- MAIN NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark main-navbar sticky-top">
-    <div class="container">
-
-        <!-- LOGO -->
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <i class="bi bi-cpu-fill logo-icon"></i>
-            <span class="logo-text">TechForge</span>
-        </a>
-
-        <!-- MOBILE -->
-        <button class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navMenu">
-
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navMenu">
-
-            <!-- SEARCH -->
-            <form class="search-box mx-auto">
-                <input type="text"
-                id="searchInput"
-                placeholder="Search components...">
-
-                <button type="submit">
-                    <i class="bi bi-search"></i>
-                </button>
-            </form>
-
-            <!-- NAV ITEMS -->
-            <ul class="navbar-nav ms-auto align-items-center gap-3">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        Shop
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        News
-                    </a>
-                </li>
-
-                <!-- CART -->
-                <li class="nav-item">
-                    <button id="cartBtn"
-                    class="cart-button">
-
-                        <i class="bi bi-cart3"></i>
-
-                        <span id="cart-count">0</span>
-                    </button>
-                </li>
-
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<!-- CATEGORY BAR -->
-<section class="category-bar">
-    <div class="container">
-
-        <div class="categories">
-
-            <div class="category-item">
-                <i class="bi bi-gpu-card"></i>
-                <span>GPU</span>
+<section class="hero-section">
+    <div class="swiper heroSwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide hero-slide">
+                <img src="https://images.unsplash.com/photo-1600861195091-690c92f1d2cc?w=1600&auto=format&fit=crop&q=80" alt="Gaming Rig">
+                <div class="hero-overlay"></div>
+                <div class="hero-content text-center">
+                    <span class="badge bg-purple px-3 py-2 mb-3 text-uppercase tracking-wider">New Arrivals</span>
+                    <h1 class="display-3 fw-extrabold text-white mb-3">FORGE YOUR ULTIMATE BATTLESTATION</h1>
+                    <p class="lead text-muted mb-4 fs-4 max-w-2xl mx-auto">Discover next-generation graphics cards, high-performance CPUs, and elite cooling systems tailored for hardcore gamers.</p>
+                    <a href="#marketplace" class="btn hero-btn btn-lg px-5 py-3 text-uppercase fw-bold">Explore Marketplace <i class="bi bi-arrow-right ms-2"></i></a>
+                </div>
             </div>
-
-            <div class="category-item">
-                <i class="bi bi-cpu"></i>
-                <span>CPU</span>
-            </div>
-
-            <div class="category-item">
-                <i class="bi bi-memory"></i>
-                <span>RAM</span>
-            </div>
-
-            <div class="category-item">
-                <i class="bi bi-device-ssd"></i>
-                <span>SSD</span>
-            </div>
-
-            <div class="category-item">
-                <i class="bi bi-pc-display"></i>
-                <span>Monitor</span>
-            </div>
-
-            <div class="category-item">
-                <i class="bi bi-controller"></i>
-                <span>Gaming</span>
-            </div>
-
         </div>
     </div>
 </section>
+
+<main id="marketplace" class="py-5 bg-darker border-top border-secondary border-opacity-10">
+    <div class="container-fluid px-md-5">
+        
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-4 mb-5 border-bottom border-secondary border-opacity-10 pb-4">
+            <div>
+                <h2 class="fw-bold text-white mb-1 tracking-tight">Available Inventory</h2>
+                <p class="text-muted small mb-0">Browse and configure high-performance components backed by our system gateway matching filters.</p>
+            </div>
+            <div class="search-wrapper">
+                <i class="bi bi-search search-icon text-muted"></i>
+                <input type="text" id="searchInput" class="form-control search-input bg-transparent text-white border-secondary" placeholder="Search components, categories, specs...">
+            </div>
+        </div>
+
+        <div id="market-grid" class="market-grid">
+            <div class="text-center py-5 my-5 w-100 grid-loader">
+                <div class="spinner-border text-purple" role="status">
+                    <span class="visually-hidden">Loading components...</span>
+                </div>
+                <p class="text-muted mt-3 small tracking-wide">Connecting to inventory gateway matrix...</p>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<div id="cartOverlay" class="cart-overlay"></div>
+<aside id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header border-bottom border-secondary border-opacity-10">
+        <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-cpu-fill text-purple fs-4"></i>
+            <h4 class="fw-bold text-white mb-0 tracking-tight">Your Custom Build</h4>
+        </div>
+        <button id=\"closeCart\" class="close-cart-btn btn text-muted p-1 hover-white">
+            <i class="bi bi-x-lg fs-5"></i>
+        </button>
+    </div>
+
+    <div id="cartSidebarItems" class="cart-body flex-grow-1">
+        </div>
+
+    <div class="cart-footer border-top border-secondary border-opacity-10 bg-darker p-4">
+        <button id="clearCartBtn" class="btn btn-outline-danger w-100 text-uppercase fw-bold py-2 small tracking-wide mb-2">
+            <i class="bi bi-trash3 me-2"></i> Clear Entire Configuration
+        </button>
+    </div>
+</aside>
+
+<?php
+// Include footer components layout wrapper 
+include 'footer.php';
+?>

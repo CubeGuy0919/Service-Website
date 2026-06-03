@@ -16,6 +16,8 @@ CREATE TABLE products (
 
 );
 
+ALTER TABLE products ADD COLUMN quantity INT DEFAULT 10;
+UPDATE products SET quantity = 10;
 
 INSERT INTO products
 (name, category, description, price, image, stock_status)
